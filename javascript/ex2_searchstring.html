@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>888354</title>
+    <script>
+        function Search() {
+            var txt = document.getElementById('txt').value;
+            var src = document.getElementById('src').value;
+            var check = document.querySelector('input[name="opt"]:checked').value;
+            var rs = "";
+            if (check == 'Yes') {
+                rs = txt.match(new RegExp(src,'g')).length;
+            }else if (check == 'No') {
+                rs = txt.match(new RegExp(src,'gi')).length;
+            }
+            document.getElementById('result').innerHTML = "Result for Search :" + rs;
+        }
+    </script>
 </head>
 <body>
-    sdfsdf
+    <center>
+        <h2>Ex2 - Search String Non Sensitive Case</h2>
+    <hr>
+    <div class="form-group">
+        <label >Text Input : </label>
+        <textarea name="txt" id="txt" cols="40" rows="10"></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Sensitive Case : </label>
+        <label class="radio-inline">
+            <input type="radio" name="opt" value="Yes" checked>Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="opt" value="No" >No
+        </label>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Search : </label>
+        <input type="text" name="src" id="src">
+    </div>
+    <br>
+    <button onclick="Search()">Search</button>    
+    <p id="result"></p>
+    </center>
 </body>
 </html>
