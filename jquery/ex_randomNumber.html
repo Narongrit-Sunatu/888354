@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Ex-Random Number For Answer</title>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var chk_ans=0;
+            var ans=0;
+            $("#rnd").click(function(){
+                var num1 = Math.floor((Math.random() * 100) + 1);
+                var num2 = Math.floor((Math.random() * 100) + 1);
+                $("#show").text(num1+"+"+num2+" = ");
+                chk_ans = num1+num2;
+            });
+            $("#send").click(function(){
+                ans = $("#ans").val();
+                if (ans==chk_ans) {
+                    $("#rs").html("<span style='color:green;'>Right Answer!!</span>");
+                }else if(ans!=chk_ans){
+                    $("#rs").html("<span style='color:red;'>That's wrong. The answer is "+chk_ans+"</span>");
+                }
+            });
+            
+        });
+            
+        </script>
+        <style>
+            body{
+                text-align: center;
+            }
+        </style>
+</head>
+<body>
+        <h1>Ex-Random Number For Answer</h1>
+        <hr>
+        <button id="rnd">Random Number</button>        
+        <br><br>
+        <div>
+            <span id="show"></span>
+            <input type="text" name="ans" id="ans" >
+        </div>
+        <br>
+        <button id="send">Send Answer</button>
+        <br><br>
+        <div>Result : <span id="rs"></span></div>
+        
+</body>
+</html>
+
