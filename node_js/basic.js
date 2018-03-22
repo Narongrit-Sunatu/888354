@@ -19,7 +19,6 @@ arry.forEach(element,i => {
 
 
 arry.forEach(function(element,index) {
-    console.log("arr["+index+"] :"+element);
-    
+    console.log("arr["+index+"] :"+element); 
 });
 
